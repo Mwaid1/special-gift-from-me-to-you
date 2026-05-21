@@ -447,7 +447,6 @@
     margin: 0;
   }
 
-  /* Hidden Text revealed on click */
   .detail-reveal {
     max-height: 0;
     opacity: 0;
@@ -461,7 +460,6 @@
     margin-top: 0;
   }
 
-  /* I increased max-height to 500px so your long paragraphs don't get cut off! */
   .memory-card.active-detail .detail-reveal {
     max-height: 500px;
     opacity: 1;
@@ -499,6 +497,38 @@
     font-style: italic;
     max-width: 700px;
     margin: 0 auto;
+  }
+
+  /* ── ADDED CUSTOM STYLES ── */
+  audio {
+    width: 100%;
+    height: 35px;
+    filter: sepia(20%) saturate(70%) hue-rotate(230deg); /* Gives it a lilac tint */
+  }
+  
+  .digital-note {
+    font-family: 'Cormorant Garamond', serif;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px dashed var(--lilac-mid);
+    text-align: center;
+  }
+
+  .stats-list {
+    list-style: none;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    width: 100%;
+  }
+  
+  .stats-list li {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(201,184,232,0.2);
+    padding-bottom: 4px;
   }
 
   .site-footer {
@@ -642,41 +672,42 @@
       </div>
     </section>
 
-    <!-- TAB 3: OUR STUFF -->
+   <!-- TAB 3: OUR STUFF -->
     <section id="tab-stuff" class="content-section">
       <div class="content-inner">
         <div class="section-label">Extra stuff i wanted to put here</div>
         <div class="memory-grid">
-          <!-- 🎞️ ADD YOUR MEDIA HERE -->
+          
+          <!-- AUDIO PLAYER -->
           <div class="media-placeholder">
-             <!-- VIDEO EXAMPLE -->
-             <video src="your-video-link.mp4" class="clickable-media" controls></video>
+             <p style="color:var(--lilac-dark); margin-bottom:10px; font-style:italic;">Press play for u 🎵</p>
+             <audio controls src="your-audio-link.mp3"></audio>
           </div>
+
+          <!-- UPDATED: DIGITAL NOTE DROPDOWN (CLEAN FONT) -->
+          <div class="memory-card" onclick="toggleDetail(this)">
+            <!-- Style attribute added here to override the font -->
+            <div class="memory-card-text" style="font-family: 'DM Sans', sans-serif; font-style: normal; font-weight: 500; letter-spacing: 0.05em; font-size: 1rem;">
+              open when u feel down and come back to ts whenever
+            </div>
+            <div class="detail-reveal">
+              <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--lilac-dark);">
+                You will get through this ridaaaaaa im w u whenever where ever for whatever and u r the strongestttttttttt so u can do itttttt i belive in u from the bottom of my heartt
+              </p>
+            </div>
+          </div>
+
+          <!-- BESTIE STATS -->
           <div class="media-placeholder">
-             <!-- IMAGE EXAMPLE -->
-             <img src="your-ss-link.jpg" class="clickable-media">
-          </div>
-          <div class="media-placeholder">
-             <img src="another-pic.jpg" class="clickable-media">
-          </div>
-          <div class="media-placeholder" style="color:var(--lilac-dark); font-style:italic; padding: 2rem; text-align:center;">
-             didnt take as much time as i thought it would but yeah u deserve this
+            <ul class="stats-list">
+              <li><span>whos better at chess:</span> <strong>me and not u whоre</strong></li>
+              <li><span>poems i got from u:</span> <strong>4 and ill keep updating</strong></li>
+              <li><span>who is ur best ship rn</span> <strong>either daniel or aashir or omar one of them and ill keep updating</strong></li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
-
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-ornament">✦ ✦ ✦</div>
-      <p class="footer-text">made with an embarrassing amount of love ♡</p>
-    </div>
-  </footer>
-
-</div>
-
 <script>
   var flipped = false;
   var entered = false;
@@ -711,7 +742,6 @@
     document.getElementById('content-container').scrollIntoView({ behavior: 'smooth' });
   }
 
-  /* ── THIS IS THE FUNCTION YOU WERE MISSING! ── */
   function toggleDetail(card) {
     card.classList.toggle('active-detail');
   }
