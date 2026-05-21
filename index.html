@@ -27,7 +27,7 @@
     overflow-x: hidden;
   }
 
-  /* ── INTRO SCREEN ── */
+  
   #intro {
     position: fixed;
     inset: 0;
@@ -238,7 +238,7 @@
     transform: translateY(-4px) rotateX(3deg);
   }
 
-  /* ── MAIN SITE ── */
+  
   #main {
     opacity: 0;
     visibility: hidden;
@@ -411,7 +411,7 @@
     background: var(--lilac-dark);
   }
 
-  /* ── CLICKABLE DETAILS ── */
+  
   .memory-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -468,7 +468,7 @@
     border-top: 1px solid rgba(122,106,173,0.1);
   }
 
-  /* ── MEDIA AREA ── */
+  
   .media-placeholder {
     background: #fff;
     border: 1px solid rgba(201,184,232,0.3);
@@ -499,11 +499,11 @@
     margin: 0 auto;
   }
 
-  /* ── ADDED CUSTOM STYLES ── */
+  
   audio {
     width: 100%;
     height: 35px;
-    filter: sepia(20%) saturate(70%) hue-rotate(230deg); /* Gives it a lilac tint */
+    filter: sepia(20%) saturate(70%) hue-rotate(230deg); 
   }
   
   .digital-note {
@@ -553,7 +553,7 @@
 </head>
 <body>
 
-<!-- ── INTRO ── -->
+
 <div id="intro">
   <div class="card-scene" onclick="flipCard()" tabindex="0" role="button" aria-label="Open letter">
     <div class="card" id="card">
@@ -580,7 +580,7 @@
   </div>
 </div>
 
-<!-- ── MAIN SITE ── -->
+
 <div id="main">
 
   <section class="hero" id="heroSection">
@@ -607,7 +607,7 @@
 
   <div id="content-container">
     
-    <!-- TAB 1: RIDA DETAILS -->
+    
     <section id="tab-details" class="content-section active">
       <div class="content-inner">
         <div class="section-label">12 Things about you</div>
@@ -661,7 +661,7 @@
       </div>
     </section>
 
-    <!-- TAB 2: THE LONG PARA -->
+    
     <section id="tab-para" class="content-section">
       <div class="content-inner">
         <div class="section-label">The Para</div>
@@ -672,21 +672,21 @@
       </div>
     </section>
 
-   <!-- TAB 3: OUR STUFF -->
+   
     <section id="tab-stuff" class="content-section">
       <div class="content-inner">
         <div class="section-label">Extra stuff i wanted to put here</div>
         <div class="memory-grid">
           
-          <!-- AUDIO PLAYER -->
+          
           <div class="media-placeholder">
              <p style="color:var(--lilac-dark); margin-bottom:10px; font-style:italic;">Press play for u 🎵</p>
              <audio controls src="guitar.mp3"></audio>
           </div>
 
-          <!-- UPDATED: DIGITAL NOTE DROPDOWN (CLEAN FONT) -->
+          
           <div class="memory-card" onclick="toggleDetail(this)">
-            <!-- Style attribute added here to override the font -->
+            
             <div class="memory-card-text" style="font-family: 'DM Sans', sans-serif; font-style: normal; font-weight: 500; letter-spacing: 0.05em; font-size: 1rem;">
               open when u feel down and come back to ts whenever
             </div>
